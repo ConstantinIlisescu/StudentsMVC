@@ -23,9 +23,14 @@ namespace StudentsMVC.Controllers
             return View();
         }
 
-        public ActionResult Instructors(int id)
+        public ActionResult Instructor(int id)
         {
             ViewBag.Id = id;
+            return View();
+        }
+
+        public ActionResult Instructors()
+        {
             return View();
         }
     }
