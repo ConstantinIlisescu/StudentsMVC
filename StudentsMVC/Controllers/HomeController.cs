@@ -1,4 +1,5 @@
 ﻿using StudentsMVC.Models;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace StudentsMVC.Controllers
@@ -24,7 +25,7 @@ namespace StudentsMVC.Controllers
             return View();
         }
 
-        public ActionResult Instructor(int id)
+        public ActionResult Instructor(int id = 1)
         {
             ViewBag.Id = id;
             Instructor dayTimeinstructor = new Instructor
@@ -40,7 +41,31 @@ namespace StudentsMVC.Controllers
 
         public ActionResult Instructors()
         {
-            return View();
+            List<Instructor> instructors = new List<Instructor>()
+            {
+                new Instructor
+                {
+                    Id = 1,
+                    FirstName = "Coste",
+                    LastName = "Ilisescu"
+
+                },
+                new Instructor
+                {
+                    Id = 2,
+                    FirstName = "Lavi",
+                    LastName = "Ilisescu"
+
+                },
+                new Instructor
+                {
+                    Id = 3,
+                    FirstName = "Maria",
+                    LastName = "Ilisescu"
+
+                }
+            };
+            return View(instructors);
         }
     }
 }
