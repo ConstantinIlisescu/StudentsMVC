@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using StudentsMVC.Models;
+using System.Web.Mvc;
 
 namespace StudentsMVC.Controllers
 {
@@ -26,7 +27,15 @@ namespace StudentsMVC.Controllers
         public ActionResult Instructor(int id)
         {
             ViewBag.Id = id;
-            return View();
+            Instructor dayTimeinstructor = new Instructor
+            {
+                Id = 1,
+                FirstName = "Coste",
+                LastName = "Ilisescu"
+
+            };
+
+            return View(dayTimeinstructor);
         }
 
         public ActionResult Instructors()
